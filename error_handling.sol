@@ -1,23 +1,22 @@
 //1.SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
-contract mod1{
-    uint public x=5;
-    uint  public y=8;
-    function REQ()public view returns(uint){
-        uint z=x * y;
-        require(z%3==0,"It should be a multiple of 3");
-        return z;
+contract handle{
+   
+    function exponent(uint a, uint b)public pure returns(uint){
+        uint z=a ^ b;
+        require(z*z>500,"Z should be more than 500");
+        return z*z;
     }
-    function REV(uint _b)public pure returns(uint){
-        if(_b*_b%5!=0){
-            revert("Number is not a multiple of 5");
+    function multiple_check(uint x)public pure returns(uint){
+        if(x%7==0){
+            revert("7 is very very odd");
         }
-        return _b;
+        return x;
         
     }
-    function ASSER()public view returns(uint){
-        assert(x*y%3==0 && x*y%5==0);
-        return x*y;
+    function check()public pure returns(uint){
+        assert(!true);
+        return 1;
     }
     
 }
